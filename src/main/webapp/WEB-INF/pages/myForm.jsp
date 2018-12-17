@@ -8,9 +8,12 @@
 
 
     <form  action="form" method="post">
+
         <input name = "name"/> <br/>
         <input name = "age" /> <br/>
         <input type="submit" value="submit"/>
+
+
     </form>
 
 
