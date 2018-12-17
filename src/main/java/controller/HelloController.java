@@ -14,8 +14,9 @@ public class HelloController {
     public String hello(Model model){
 
         model.addAttribute("message", "Hello world from Controller");
+        // если есть только значение без ключа , то ключ будет равен типу
         model.addAttribute("Max");
-        model.addAttribute("Mike");
+
 
         return "hello";
     }
@@ -28,6 +29,12 @@ public class HelloController {
     }
 
 
+
+    @RequestMapping("/hello3/{one}/two/{three}")
+    @ResponseBody
+    public String hello3(@PathVariable("one") String one, @PathVariable int three) {
+        return one + three;
+    }
 
 
 }
