@@ -30,7 +30,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     protected Class<?>[] getServletConfigClasses() {
 
         return new Class<?>[]{
-                MyWebConfig.class, MyWebConfig.class
+                MyWebConfig.class, WebFlowConfig.class
         };
     }
 
