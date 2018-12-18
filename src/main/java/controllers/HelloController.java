@@ -1,6 +1,7 @@
-package controller;
+package controllers;
 
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -8,12 +9,14 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class HelloController {
 
+    @Value("${name}")
+    String nameFromPropertise;
 
     // если метод возвращает не String , то имя для view будет равно маппингу
     @RequestMapping(path = {"/hello"}, method = RequestMethod.GET)
     public String hello(Model model){
 
-        model.addAttribute("message", "Hello world from Controller");
+        model.addAttribute("message", "Hello world from Controller " + nameFromPropertise);
         // если есть только значение без ключа , то ключ будет равен типу
         model.addAttribute("Max");
 
