@@ -6,6 +6,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 import javax.sql.DataSource;
 
@@ -13,8 +15,8 @@ import javax.sql.DataSource;
 @ComponentScan("springData")
 public class MySpringDataConfig {
 
-     @Bean
-    public DataSource getDataSource () {
+    @Bean
+    public DataSource getDataSource() {
 
 
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
@@ -26,9 +28,19 @@ public class MySpringDataConfig {
 
         return driverManagerDataSource;
     }
+
     @Bean
     public JdbcTemplate getJdbcTemplate(DataSource dataSource) {
-         return new JdbcTemplate(dataSource);
+        return new JdbcTemplate(dataSource);
     }
+
+
+
+//        // создание тестовой БД
+//    @Bean
+//    public DataSource getDataSourse() {
+//        return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).addScript("classpath:myScript.sql").build();
+//    }
+
 
 }
