@@ -7,7 +7,7 @@
          http://www.springframework.org/schema/context
           http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package = "controllers" />
+    <context:component-scan base-package = "controllers, other" />
     <context:property-placeholder location="classpath:/aplication.properties" />
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

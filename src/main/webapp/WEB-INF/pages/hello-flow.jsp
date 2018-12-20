@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: AtagaN
-  Date: 19.12.2018
-  Time: 0:49
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,5 +6,13 @@
 </head>
 <body>
 Hello from "hello-flow" !!!
+
+
+ <form method="post" action="${flowExecutionUrl}">
+         <input type="hidden" name="_eventId" value="action"/>
+         <input type="submit" value="goNext"/>
+ </form>
+
+
 </body>
 </html>

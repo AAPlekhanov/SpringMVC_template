@@ -17,7 +17,7 @@ import java.util.Collections;
 
 
 @Configuration
-@ComponentScan("controllers")
+@ComponentScan({"controllers", "other"})
 public class WebFlowConfig  extends AbstractFlowConfiguration {
 
     @Autowired

@@ -3,6 +3,30 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
+    <var name="flowBean" class="other.MyFlowBean"/>
+    <input name="i" type="int"/>
 
-    <view-state id="hello-flow"/>
+    <on-start>
+        <evaluate expression="5" result="flowScope.i"/>
+    </on-start>
+
+
+    <view-state id="hello-flow">
+        <transition on="action" to="myActionState"/>
+    </view-state>
+
+    <action-state id="myActionState">
+        <evaluate expression="flowBean.printInt(i)"/>
+        <transition on="success" to="decision"/>
+    </action-state>
+
+
+    <!--разветвление flow-->
+    <decision-state id="decision">
+        <if test="false" then="first-flow" else="second-flow"/>
+    </decision-state>
+
+
+    <view-state id="first-flow" view="first-flow"/>
+    <view-state id="second-flow" view="second-flow"/>
 </flow>
