@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.jndi.JndiObjectFactoryBean;
 
 import javax.sql.DataSource;
 
@@ -12,8 +13,6 @@ public class DbConfigMY {
 
     @Bean
     public DataSource getDataSource () {
-
-
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
 
         driverManagerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
@@ -23,6 +22,17 @@ public class DbConfigMY {
 
         return driverManagerDataSource;
     }
+
+
+    // получения DataSource c помощью JNDI ( настройки прописаны на сервере )
+//    @Bean
+//    public JndiObjectFactoryBean getJndiDataSource() {
+//        JndiObjectFactoryBean jndiObjectFactoryBean = new JndiObjectFactoryBean();
+//        jndiObjectFactoryBean.setJndiName("j");
+//        jndiObjectFactoryBean.setResourceRef(true);
+//        jndiObjectFactoryBean.setProxyInterface(DataSource.class);
+//        return jndiObjectFactoryBean;
+//    }
 
 
     @Bean

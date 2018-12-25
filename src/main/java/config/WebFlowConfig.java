@@ -16,6 +16,8 @@ import org.springframework.webflow.mvc.servlet.FlowHandlerMapping;
 import java.util.Collections;
 
 
+// конфигурация для web flow
+
 @Configuration
 @ComponentScan({"controllers", "other"})
 public class WebFlowConfig  extends AbstractFlowConfiguration {
