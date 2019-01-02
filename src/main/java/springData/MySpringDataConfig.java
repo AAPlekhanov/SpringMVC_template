@@ -5,6 +5,7 @@ import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
@@ -14,6 +15,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan("springData")
+@Import(MySpringDataHibernateConfig.class)
 public class MySpringDataConfig {
 
 //    @Bean
@@ -32,7 +34,7 @@ public class MySpringDataConfig {
     public BasicDataSource getBasicDataSouese() {
         BasicDataSource basicDataSource = new BasicDataSource();
         basicDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        basicDataSource.setUrl("jdbc:mysql://localhost:3306/Lessons?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
+        basicDataSource.setUrl("jdbc:mysql://localhost:3306/bookmanager?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
         basicDataSource.setUsername("root");
         basicDataSource.setPassword("root");
 
