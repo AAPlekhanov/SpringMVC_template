@@ -1,11 +1,11 @@
 package config;
 
 
+import config.spring_security.SpringSecurityConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.ViewResolver;
@@ -13,12 +13,15 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-import javax.sql.DataSource;
+
+/**
+ * аналог  xml  диспатчер сервлета
+ */
 
 @Configuration
 @EnableWebMvc
 @ComponentScan({"controllers"})
-@Import(DbConfigMY.class)
+@Import({DbConfigMY.class, SpringSecurityConfig.class})
 public class MyWebConfig {
 
 //    @Override

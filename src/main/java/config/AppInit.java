@@ -1,6 +1,7 @@
 package config;
 
 
+import config.spring_security.SpringSecurityInitializer;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
@@ -13,6 +14,7 @@ import javax.servlet.ServletRegistration;
 
 /**
  * инициализация Spring MVC через аннотации ( Файлов dispatcher-servlet.xml и web.xml не должно быть чтобы не было конфликтов)
+ * аналог web.xml
  */
 
 
@@ -30,7 +32,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     protected Class<?>[] getServletConfigClasses() {
 
         return new Class<?>[]{
-                MyWebConfig.class, WebFlowConfig.class
+                MyWebConfig.class, WebFlowConfig.class , SpringSecurityInitializer.class
         };
     }
 
