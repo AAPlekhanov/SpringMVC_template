@@ -4,6 +4,7 @@
     <title>Title</title>
 </head>
 <body>
+   Hello jsp page  <br/>
    ${message}
    ${string}
 </body>

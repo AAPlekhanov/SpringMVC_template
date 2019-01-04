@@ -19,7 +19,6 @@ public class ServletController {
                                   ServletResponse response, @RequestHeader("Host") String headers) throws IOException {
 
         response.getWriter().write("hello from servlet responce   header \"Host\" = " + headers);
-
     }
 
 }
