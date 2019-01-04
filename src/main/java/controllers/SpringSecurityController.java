@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class SpringSecurityController {
 
     @RequestMapping("/test")
-    @ResponseBody
     public String springSecurityTest(){
-        return "test spring security";
+        return "testSpringSecurity";
     }
 }

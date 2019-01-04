@@ -12,6 +12,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.util.matcher.AndRequestMatcher;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.security.web.util.matcher.RegexRequestMatcher;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -57,7 +60,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter implement
     @Override
     protected void configure(HttpSecurity http) throws Exception {
      http.authorizeRequests().mvcMatchers("/test").authenticated()
-             .and().httpBasic().and().formLogin().loginPage("/login").permitAll();
+             .and().httpBasic().and().formLogin().loginPage("/login").permitAll()
+             .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/hello");
     }
 
     @Override
