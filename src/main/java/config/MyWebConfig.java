@@ -20,7 +20,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"controllers"})
+@ComponentScan({"controllers","config.spring_security" })
 @Import({DbConfigMY.class, SpringSecurityConfig.class})
 public class MyWebConfig {
 
