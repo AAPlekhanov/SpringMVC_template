@@ -6,8 +6,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.web.multipart.MultipartResolver;
-import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -20,8 +18,8 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"controllers","config.spring_security" })
-@Import({DbConfigMY.class, SpringSecurityConfig.class})
+@ComponentScan({"controllers","config.spring_security","spring_soap" })
+@Import({DbConfigMY.class, SpringSecurityConfig.class, SpringSoapServerConfig.class})
 public class MyWebConfig {
 
 //    @Override
