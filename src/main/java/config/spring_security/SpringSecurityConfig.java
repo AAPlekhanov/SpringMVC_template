@@ -61,7 +61,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter implement
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-     http.authorizeRequests().mvcMatchers("/test").authenticated()
+     http
+             .csrf().disable()// отключили csrf защиту
+             .authorizeRequests().antMatchers("/test").authenticated()
              .and().httpBasic().and().formLogin().loginPage("/login").permitAll()
              .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/hello");
     }

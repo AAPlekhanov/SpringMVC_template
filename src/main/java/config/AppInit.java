@@ -41,6 +41,8 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
         return new String[]{"/"};
     }
 
+
+    // опционально (для конфигурации простого Spring mvc)
     @Override
     protected void customizeRegistration(ServletRegistration.Dynamic registration) {
         // путь сохранения файлов

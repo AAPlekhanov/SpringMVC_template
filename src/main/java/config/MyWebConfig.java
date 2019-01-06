@@ -39,9 +39,10 @@ public class MyWebConfig {
         return resolver;
     }
 
-    @Bean
-    public MultipartResolver multipartResolver() {
-        return new StandardServletMultipartResolver();
-    }
+    // бин для загрузки файлов
+//    @Bean
+//    public MultipartResolver multipartResolver() {
+//        return new StandardServletMultipartResolver();
+//    }
 
 }
