@@ -16,6 +16,7 @@ public class Student {
 
   private String name;
 
+    public Student(){}      // конструктор по умолчанию для hibernate
 
     public Student(String name) {
         this.name = name;

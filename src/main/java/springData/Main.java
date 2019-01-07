@@ -14,11 +14,14 @@ public class Main {
 
         ApplicationContext context = new AnnotationConfigApplicationContext(MySpringDataConfig.class);
 
-
-        StudentRepository studentRepository = context.getBean(StudentRepository.class);
+        // тест hibernate
+        StudentRepositoryHibernate studentRepository = context.getBean(StudentRepositoryHibernate.class);
         studentRepository.saveStudent(new Student("Max"));
 
-//        DataBaseController dataBaseController = context.getBean(DataBaseController.class);
+
+
+        //  тест JDBC
+//        DataBaseControllerJDBC dataBaseController = context.getBean(DataBaseControllerJDBC.class);
 //        dataBaseController.createTable();
 
     }

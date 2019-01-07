@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class DataBaseController {
+public class DataBaseControllerJDBC {
 
     //  JdbcOperations или JdbcTemplate
     @Autowired
