@@ -1,9 +1,9 @@
-package spring_soap.spring_soap_service_client;
+package spring_soap.spring_soap_client;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean;
-import spring_soap.SoapSercice;
+import spring_soap.spring_soap_service.SoapSercice;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -15,7 +15,7 @@ import java.net.URL;
 @Configuration
 public class SoapClientConfig {
 
-    @Bean
+     @Bean
      public JaxWsPortProxyFactoryBean getPortProxyFactoryBean() throws MalformedURLException {
 
         JaxWsPortProxyFactoryBean jaxWsPortProxyFactoryBean = new JaxWsPortProxyFactoryBean();
@@ -23,7 +23,7 @@ public class SoapClientConfig {
         jaxWsPortProxyFactoryBean.setServiceName("SoapService");
         jaxWsPortProxyFactoryBean.setServiceInterface(SoapSercice.class);
         // данные из wsdl
-        jaxWsPortProxyFactoryBean.setNamespaceUri("http://spring_soap/"); // targetNamespace="http://spring_soap/"
+        jaxWsPortProxyFactoryBean.setNamespaceUri("http://spring_soap_service.spring_soap/"); // targetNamespace="http://spring_soap/"
         jaxWsPortProxyFactoryBean.setPortName("SoapServiceEndpointPort"); // port name="SoapServiceEndpointPort"
 
         return jaxWsPortProxyFactoryBean;

@@ -18,7 +18,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"controllers","config.spring_security","spring_soap" })
+@ComponentScan({"controllers","config.spring_security","spring_soap.spring_soap_service" })
 @Import({DbConfigMY.class, SpringSecurityConfig.class, SpringSoapServerConfig.class})
 public class MyWebConfig {
 

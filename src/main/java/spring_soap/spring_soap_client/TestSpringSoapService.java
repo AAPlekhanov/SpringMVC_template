@@ -1,7 +1,7 @@
-package spring_soap.spring_soap_service_client;
+package spring_soap.spring_soap_client;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import spring_soap.SoapSercice;
+import spring_soap.spring_soap_service.SoapSercice;
 
 public class TestSpringSoapService {
 

@@ -1,4 +1,4 @@
-package spring_soap;
+package spring_soap.spring_soap_service;
 
 
 import javax.jws.WebService;
