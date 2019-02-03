@@ -20,14 +20,13 @@ import javax.servlet.ServletRegistration;
 
 
 public class AppInit extends AbstractAnnotationConfigDispatcherServletInitializer {
-    // Этот метод должен содержать конфигурации которые инициализируют Beans
-    // для инициализации бинов у нас использовалась аннотация @Bean
+
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return null;
     }
 
-    // Тут добавляем конфигурацию, в которой инициализируем ViewResolver
+
     @Override
     protected Class<?>[] getServletConfigClasses() {
 
